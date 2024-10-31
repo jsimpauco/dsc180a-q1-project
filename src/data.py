@@ -34,6 +34,10 @@ def clean_data(chromosome):
     chromosome: The chromosome to filter the data on 
     """
     
+    # Checks if data is already downloaded #
+    if os.path.isfile('data/filtered_data.csv'):
+        return
+
     # Reading data #
     df = pd.read_csv('data/raw_data.csv')
 
@@ -42,4 +46,7 @@ def clean_data(chromosome):
 
     # Changing sequence to all uppercase #
     filtered_data['seq'] = filtered_data['seq'].str.upper()
+
+    # Exporting to data folder #
+    filtered_data.to_csv('data/filtered_data.csv', index=False)
     
