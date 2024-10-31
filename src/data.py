@@ -1,5 +1,7 @@
+#!/usr/bin/env python
+
 """
-data_cleaning.py retrieves and cleans the data required for this project
+data.py retrieves and cleans the data required for this project
 """
 
 # Imports #
@@ -18,4 +20,4 @@ def download_data():
     df = ds['train'].to_pandas()
     
     # Exporting to data folder #
-    df.to_csv('raw_data', index=False)
+    df.to_csv('data/raw_data', index=False)
