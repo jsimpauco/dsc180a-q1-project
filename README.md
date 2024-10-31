@@ -2,7 +2,7 @@
 
 ## Running the project
 Instructions to recreate project:
-- First, to install the dependencies, run the following command from the root directory of the project: pip install -r requirements.txt
+- First, to install the dependencies, run the following command from the root directory of the project: `pip install -r requirements.txt`
 
 ### Building the project stages using script.py.
 - To get the data, from the project root dir, run python run.py data
