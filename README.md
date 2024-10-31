@@ -6,4 +6,4 @@ Instructions to recreate project:
 
 ### Building the project stages using script.py.
 - To get the data, from the project root, run `python run.py data`
-    - This fetches the data, creates features, cleans data and saves the data in the data/temp directory.
+    - This fetches the data, creates features, cleans data and saves the data in the data directory.
