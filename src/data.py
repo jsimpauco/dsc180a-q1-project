@@ -26,3 +26,20 @@ def download_data():
     
     # Exporting to data folder #
     df.to_csv('data/raw_data.csv', index=False)
+
+def clean_data(chromosome):
+    """
+    Filters the data by the given chromosome and makes all the sequence strings uppercase
+
+    chromosome: The chromosome to filter the data on 
+    """
+    
+    # Reading data #
+    df = pd.read_csv('data/raw_data.csv')
+
+    # Filtering data by chromosome #
+    filtered_data = df[df['chrom'] == chromosome]
+
+    # Changing sequence to all uppercase #
+    filtered_data['seq'] = filtered_data['seq'].str.upper()
+    
