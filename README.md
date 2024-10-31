@@ -1,2 +1,3 @@
-# dsc180a-q1-project
-testing commit
+# Using Unsupersived Machine Learning to Predict Genetic Variation
+
+Instructions to recreate project:
