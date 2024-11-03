@@ -23,6 +23,8 @@ def download_data():
 
     # Converting dataset to pandas DataFrame #
     df = ds['train'].to_pandas()
+
+    os.makedirs('data')
     
     # Exporting to data folder #
     df.to_csv('data/raw_data.csv', index=False)
