@@ -26,4 +26,36 @@ def split_data():
     # Changing sequence to all uppercase #
     df['seq'] = df['seq'].str.upper()
 
-    print('test complete')
+    # Making new folder #
+    os.makedirs('data/split_data')
+
+    # Setting variables for splitting files #
+    start = 0
+    end = 400000
+    stopper = 2115364
+    mid = 1200000
+    kmers1 = 0
+    kmers2 = 0
+
+    # While loop to create files #
+    print('entered while loop')
+    while start < stopper:
+
+        if end < mid:
+            temp = df[start:end]
+            kmers1 += 1
+            temp.to_csv(f'data/split_data/kmers1_{kmers1}.csv', index=False)
+            start += 400000
+            end += 400000
+        elif end == mid:
+            temp = df[start:end]
+            kmers1 += 1
+            temp.to_csv(f'data/split_data/kmers1_{kmers1}.csv', index=False)
+            start += 400000
+            end += 457682
+        else:
+            temp = df[start:end]
+            kmers2 += 1
+            temp.to_csv(f'data/split_data/kmers2_{kmers2}.csv', index=False)
+            start += 457682
+            end += 457682
