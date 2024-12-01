@@ -15,6 +15,18 @@ if __name__ == '__main__':
     # Getting args #
     args = sys.argv[1:]
 
+    # all argument #
+    if 'all' in args:
+
+        print("'all' argument given. Running whole script...")
+
+        # Setting args to all available arguments #
+        args = [
+            'data',
+            'split',
+            'kmers'
+        ]
+
     # data argument #
     if 'data' in args:
 
