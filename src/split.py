@@ -17,8 +17,6 @@ def split_data():
     # Checks if data is already split #
     if os.path.isdir('data/split_data'):
         return
-    else:
-        print('dne')
     
     # Reading data #
     df = pd.read_csv('data/raw_data.csv')
