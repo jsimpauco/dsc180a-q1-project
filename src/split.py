@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-Splits the data for easier use when creating kmers
+split.py splits the data for easier use when creating kmers
 """
 
 # Imports #
@@ -36,21 +36,23 @@ def split_data():
     kmers2 = 0
 
     # While loop to create files #
-    print('entered while loop')
     while start < stopper:
 
+        # Getting first 800,000 points #
         if end < mid:
             temp = df[start:end]
             kmers1 += 1
             temp.to_csv(f'data/split_data/kmers1_{kmers1}.csv', index=False)
             start += 400000
             end += 400000
+        # Getting middle 400,000 points #
         elif end == mid:
             temp = df[start:end]
             kmers1 += 1
             temp.to_csv(f'data/split_data/kmers1_{kmers1}.csv', index=False)
             start += 400000
             end += 457682
+        # Getting rest of data #
         else:
             temp = df[start:end]
             kmers2 += 1
