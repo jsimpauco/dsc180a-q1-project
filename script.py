@@ -18,24 +18,36 @@ if __name__ == '__main__':
     # data argument #
     if 'data' in args:
 
+        print('Currently running: data.py')
+
         # Downloading data #
         data.download_data()
     
+    # split argument #
     if 'split' in args:
+
+        print('Currently running: split.py')
 
         # Splitting data #
         split.split_data()
     
+    # kmers argument # 
     if 'kmers' in args:
 
-        # Note: config file controls BOTH kmer python files #
+        # Note: config file controls BOTH kmer1 and kmer2 python files #
         config = json.load(open('config/kmers.json'))
+
+        print('Currently running: kmers1.py')
 
         # Creating first half of kmers #
         kmers1.kmer_files1(**config)
 
+        print('Currently running: kmers2.py')
+
         # Creating second half of kmers #
         kmers2.kmer_files2(**config)
+
+        print('Currently running: all_kmers.py')
 
         # Concating kmers into one file #
         all_kmers.all_kmers()
