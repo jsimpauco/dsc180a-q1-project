@@ -54,7 +54,7 @@ def kmer_files1(batch_size, k):
     """
     # Checks if kmers data already exists #
     if os.path.isfile('data/kmers_data/kmers1.csv'):
-        print('1st half of kmers data already exists! Skipping creation of files')
+        print('1st half of kmers data already exists! Skipping creation of files...')
         return
     
     # Initialize an empty list to store k-mer strings

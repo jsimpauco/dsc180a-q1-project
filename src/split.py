@@ -16,6 +16,7 @@ def split_data():
 
     # Checks if data is already split #
     if os.path.isdir('data/split_data'):
+        print('Split data already exists! Skipping creation of files...')
         return
     
     # Reading data #
@@ -59,3 +60,5 @@ def split_data():
             temp.to_csv(f'data/split_data/kmers2_{kmers2}.csv', index=False)
             start += 457682
             end += 457682
+
+    print("Creation of files complete! All csv files stored in 'data/split_data'")

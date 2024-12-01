@@ -20,10 +20,6 @@ if __name__ == '__main__':
 
         # Downloading data #
         data.download_data()
-
-        # cleaning data #
-        # config = json.load(open('config/data.json'))
-        # data.clean_data(**config)
     
     if 'split' in args:
 
