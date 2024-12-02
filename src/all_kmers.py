@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-Puts the split kmer files into one file
+all_kmers.py puts the split kmer files into one file
 """
 
 # Imports #

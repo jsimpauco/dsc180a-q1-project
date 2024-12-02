@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-Makes first half of kmer files for use later
+kmers1.py makes first half of kmer files for use later
 """
 
 # Imports #
