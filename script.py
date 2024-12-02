@@ -8,6 +8,7 @@ import src.split as split
 import src.kmers1 as kmers1
 import src.kmers2 as kmers2
 import src.all_kmers as all_kmers
+import src.motif as motif
 
 # Checking if script.py is being run as a script in command line #
 if __name__ == '__main__':
@@ -24,8 +25,13 @@ if __name__ == '__main__':
         args = [
             'data',
             'split',
-            'kmers'
+            'kmers',
+            'motif'
         ]
+    # Other arguments given #
+    else:
+        print('\nArguments given: ' + ', '.join(args))
+        print('\nRunning script based on given arguments...')
 
     # data argument #
     if 'data' in args:
@@ -63,3 +69,13 @@ if __name__ == '__main__':
 
         # Concating kmers into one file #
         all_kmers.all_kmers()
+
+    # motif argument #
+    if 'motif' in args:
+
+        config = json.load(open('config/motif.json'))
+
+        print('\nCurrently running: motif.py')
+
+        # Creating motif file #
+        motif.motif_text(**config)
