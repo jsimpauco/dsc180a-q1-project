@@ -9,6 +9,7 @@ import src.kmers1 as kmers1
 import src.kmers2 as kmers2
 import src.all_kmers as all_kmers
 import src.motif as motif
+import src.model as model
 
 # Checking if script.py is being run as a script in command line #
 if __name__ == '__main__':
@@ -79,3 +80,13 @@ if __name__ == '__main__':
 
         # Creating motif file #
         motif.motif_text(**config)
+
+    # model argument #
+    if 'model' in args:
+
+        config = json.load(open('config/model.json'))
+
+        print('\nCurrently running: model.py')
+
+        # Getting results #
+        model.process_sequence(**config)
