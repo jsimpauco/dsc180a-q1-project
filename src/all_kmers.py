@@ -17,7 +17,7 @@ def all_kmers():
     """
     # Checks if kmers data already exists #
     if os.path.isfile('data/kmers_data/all_kmers.csv'):
-        print('All kmers data already exists! Skipping creation of files')
+        print('All kmers data already exists! Skipping creation of files...')
         return
     
     print('Concatting kmers files into one file...')
