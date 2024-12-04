@@ -27,7 +27,8 @@ if __name__ == '__main__':
             'data',
             'split',
             'kmers',
-            'motif'
+            'motif',
+            'model'
         ]
     # Other arguments given #
     else:
@@ -89,4 +90,6 @@ if __name__ == '__main__':
         print('\nCurrently running: model.py')
 
         # Getting results #
-        model.process_sequence(**config)
+        model.maskedlm(**config)
+
+    print('\n Script successfully ran!')
