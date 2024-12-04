@@ -12,6 +12,10 @@ from collections import Counter
 def generate_18mers(kmer_string):
     """
     Function to generate 18-character motifs
+
+    kmer_string (str): Given kmer string
+
+    Returns an 18 character motif
     """
     # Split each string into individual short k-mers #
     short_kmers = kmer_string.split()
@@ -22,6 +26,10 @@ def generate_18mers(kmer_string):
 def motif_text(chunksize):
     """
     Creates a motif.txt file for later use
+
+    chunksize (int): Define chunksize to manage memory usage, adjust based on available memory
+
+    Saves a file within the data/ directory
     """
     # Checks if motif data already exists #
     if os.path.isfile('data/motifs.txt'):

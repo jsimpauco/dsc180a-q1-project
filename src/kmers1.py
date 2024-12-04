@@ -15,6 +15,11 @@ def preprocess_sequence(sequence, strand):
     """
     Function to preprocess sequence and handle strand
     Convert sequence to uppercase and reverse-complement if strand is '-'
+
+    sequence (str): Sequence of nucleotides
+    strand (str): Complementary chain that make up a molecule of the DNA/RNA
+
+    Returns a fully uppercased sequence
     """
     sequence = sequence.upper()
     if strand == "-":
@@ -26,6 +31,11 @@ def generate_kmers(sequence, k):
     """
     Function to generate overlapping k-mers from a sequence
     Generate overlapping k-mers of length k
+
+    sequence (str): Sequence of nucleotides
+    k (int): Size of generated k-mers at length k
+
+    Returns kmers of length k
     """
     # Yielding k-mers one at a time to avoid creating large lists in memory #
     for i in range(len(sequence) - k + 1):
@@ -34,6 +44,11 @@ def generate_kmers(sequence, k):
 def process_batch(batch_df, k):
     """
     Preprocess and generate k-mers for each row in a batch DataFrame
+
+    batch_size (DataFrame): Batch of rows in a DataFrame
+    k (int): Size of generated k-mers at length k
+
+    Returns kmers for a given batch of rows
     """
     all_kmers = []
     for _, row in batch_df.iterrows():
@@ -49,8 +64,10 @@ def kmer_files1(batch_size, k):
     """
     Create the needed kmer files
 
-    batch_size: Define batch size to manage memory usage, adjust based on available memory
-    k: Size of generated k-mers at length k
+    batch_size (int): Define batch size to manage memory usage, adjust based on available memory
+    k (int): Size of generated k-mers at length k
+
+    Saves a file within the data/kmers_data/ directory
     """
     # Checks if kmers data already exists #
     if os.path.isfile('data/kmers_data/kmers1.csv'):
@@ -93,4 +110,4 @@ def kmer_files1(batch_size, k):
     # Exporting to kmers folder #
     df_kmers.to_csv('data/kmers_data/kmers1.csv', index=False)
 
-    print("Creation of files complete! Data stored in 'data/kmers_data' as 'kmers1.csv'")
+    print("Creation of files complete! Data stored in 'data/kmers_data/' as 'kmers1.csv'")

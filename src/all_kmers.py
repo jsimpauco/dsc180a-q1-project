@@ -11,7 +11,9 @@ import pandas as pd
 
 def all_kmers():
     """
-    Function that concats the two csv files
+    Function that concats the two split kmer csv files
+
+    Saves a file within the data/kmers_data/ directory
     """
     # Checks if kmers data already exists #
     if os.path.isfile('data/kmers_data/all_kmers.csv'):

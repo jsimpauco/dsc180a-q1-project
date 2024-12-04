@@ -12,6 +12,8 @@ import os.path
 def download_data():
     """
     Downloads the required data
+
+    Saves a file within the data/ directory
     """
 
     # Checks if data is already downloaded #

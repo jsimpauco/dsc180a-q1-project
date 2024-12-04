@@ -15,6 +15,11 @@ from transformers import AutoTokenizer, AutoModelForMaskedLM
 def tokenize(kmers, tokenizer):
     """
     Tokenize using DNABERT tokenizer
+
+    kmer (str): Given string of kmers
+    tokenizer (transfomer): An instance of AutoTokenizer from transfomers depenency
+
+    Returns the tokenized kmers
     """
     # Put kmers into list #
     kmers = kmers.split()
@@ -25,6 +30,12 @@ def tokenize(kmers, tokenizer):
 def maskedlm(batch_size, percentage):
     """
     Runs a MaskedLM model on kmers data, storing results within the data folder
+
+    batch_size (int): Define batch size to manage memory usage, adjust based on available memory
+    percentage (float): Portion of data to run the MaskedLM model on. Ex: 1.0 will run the model
+                        100% of the data, 0.5 will run the model on 50% of the data, etc.
+
+    Saves a file within the data/ directory
     """
     # Checks if MaskedML results data already exists #
     if os.path.isfile('data/results.npy'):
