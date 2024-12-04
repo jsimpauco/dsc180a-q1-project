@@ -92,4 +92,4 @@ if __name__ == '__main__':
         # Getting results #
         maskedlm.maskedlm(**config)
 
-    print('\n Script successfully ran!')
+    print('\nScript successfully ran!')
