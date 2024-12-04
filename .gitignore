@@ -3,3 +3,4 @@
 data/
 __pycache__/
 test_notebooks/
+conda_env_export.py
