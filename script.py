@@ -9,7 +9,7 @@ import src.kmers1 as kmers1
 import src.kmers2 as kmers2
 import src.all_kmers as all_kmers
 import src.motif as motif
-import src.model as model
+import src.maskedlm as maskedlm
 
 # Checking if script.py is being run as a script in command line #
 if __name__ == '__main__':
@@ -85,11 +85,11 @@ if __name__ == '__main__':
     # model argument #
     if 'model' in args:
 
-        config = json.load(open('config/model.json'))
+        config = json.load(open('config/maskedlm.json'))
 
-        print('\nCurrently running: model.py')
+        print('\nCurrently running: maskedlm.py')
 
         # Getting results #
-        model.maskedlm(**config)
+        maskedlm.maskedlm(**config)
 
     print('\n Script successfully ran!')

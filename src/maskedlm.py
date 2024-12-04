@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-model.py runs a MaskedLM model on kmers data
+maskedlm.py runs a MaskedLM model on kmers data
 """
 
 # Imports #
