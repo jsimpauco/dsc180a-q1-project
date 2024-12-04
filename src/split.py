@@ -12,6 +12,8 @@ def split_data():
     """
     Splits the data into multiple files for it later to be used to create kmers.
     Also makes all the sequence strings uppercase
+
+    Saves a file within the data/split_data/ directory
     """
 
     # Checks if data is already split #
