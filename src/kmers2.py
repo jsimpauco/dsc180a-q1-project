@@ -73,6 +73,11 @@ def kmer_files2(batch_size, k):
     if os.path.isfile('data/kmers_data/kmers2.csv'):
         print('2nd half of kmers data already exists! Skipping creation of files...')
         return
+
+    # Checks if split data exists (needed to run function) #
+    if not os.path.isfile('data/split_data/kmers2_1.csv'):
+        print("Split data needed to get motif files! Please run the 'split' argument before proceeding")
+        return
     
     # Initialize an empty list to store k-mer strings
     all_kmers = []
@@ -110,4 +115,4 @@ def kmer_files2(batch_size, k):
     # Exporting to kmers folder #
     df_kmers.to_csv('data/kmers_data/kmers2.csv', index=False)
 
-    print("Creation of files complete! Data stored in 'data/kmers_data' as 'kmers2.csv'")
+    print("Creation of files complete! Data stored in 'data/kmers_data/' as 'kmers2.csv'")

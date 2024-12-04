@@ -18,7 +18,7 @@ def download_data():
 
     # Checks if data is already downloaded #
     if os.path.isfile('data/raw_data.csv'):
-        print('Raw data already exists! Skipping creation of files...')
+        print('Raw data file already exists! Skipping creation of files...')
         return
 
     # Loading dataset #
@@ -36,5 +36,5 @@ def download_data():
     # Exporting to data folder #
     df.to_csv('data/raw_data.csv', index=False)
 
-    print("Creation of files complete! Data stored in 'data' as 'raw_data.csv'")
+    print("Creation of files complete! Data stored in 'data/' directory as 'raw_data.csv'")
     

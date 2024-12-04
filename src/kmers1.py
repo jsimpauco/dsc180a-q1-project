@@ -73,6 +73,11 @@ def kmer_files1(batch_size, k):
     if os.path.isfile('data/kmers_data/kmers1.csv'):
         print('1st half of kmers data already exists! Skipping creation of files...')
         return
+
+    # Checks if split data exists (needed to run function) #
+    if not os.path.isfile('data/split_data/kmers1_1.csv'):
+        print("Split data needed to get motif files! Please run the 'split' argument before proceeding")
+        return
     
     # Initialize an empty list to store k-mer strings
     all_kmers = []

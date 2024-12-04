@@ -18,7 +18,12 @@ def split_data():
 
     # Checks if data is already split #
     if os.path.isdir('data/split_data'):
-        print('Split data already exists! Skipping creation of files...')
+        print('Split data file already exists! Skipping creation of files...')
+        return
+    
+    # Checks if raw_data.csv exists (needed to run function) #
+    if not os.path.isfile('data/raw_data.csv'):
+        print("raw_data.csv needed to get motif files! Please run the 'data' argument before proceeding")
         return
     
     # Reading data #
@@ -63,4 +68,4 @@ def split_data():
             start += 457682
             end += 457682
 
-    print("Creation of files complete! All csv files stored in 'data/split_data'")
+    print("Creation of files complete! All csv files stored in 'data/split_data/'")
