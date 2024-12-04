@@ -28,7 +28,7 @@ if __name__ == '__main__':
             'split',
             'kmers',
             'motif',
-            'model'
+            'maskedlm'
         ]
     # Other arguments given #
     else:
@@ -82,8 +82,8 @@ if __name__ == '__main__':
         # Creating motif file #
         motif.motif_text(**config)
 
-    # model argument #
-    if 'model' in args:
+    # maskedlm argument #
+    if 'maskedlm' in args:
 
         config = json.load(open('config/maskedlm.json'))
 
